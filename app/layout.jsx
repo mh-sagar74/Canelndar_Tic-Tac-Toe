@@ -3,7 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import Footer from "./components/Footer";
 
-const roboto = Roboto({ weight: "300", subsets: ["italic"] });
+const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 
 export const metadata = {
   title: "My Project",
