@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import GameBox from "./GameBox";
 import winningCondition from "./winningCondition";
-import Btn from "./Btn";
+import Btn from "../Btn";
 import ReplayRoundedIcon from "@mui/icons-material/ReplayRounded";
+import Winner from "./Winner";
 
 export default function PlayGround() {
   const [boxes, setBoxes] = useState(Array(9).fill(null));
@@ -42,13 +43,7 @@ export default function PlayGround() {
 
   return (
     <div>
-      <div>
-        {isWin ? (
-          <div className="text-4xl bg-green-100">
-            Winner is : <span className="text-red-500 font-bold">{winner}</span>
-          </div>
-        ) : null}
-      </div>
+      <Winner isWin={isWin} winner={winner} />
       <Btn clickEvent={handleReplayBtn} icon={<ReplayRoundedIcon />} />
       <div className="flex w-[490px] flex-wrap gap-5 justify-center">
         {boxes.map((box, i) => (

@@ -1,4 +1,4 @@
-import TikTakToe from "../components/TikTakToe";
+import TikTakToe from "../components/tic-tac-toe/TikTakToe";
 
 export default function TikTakToePage() {
   return (
