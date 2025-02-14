@@ -11,6 +11,7 @@ export default function Calendar() {
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [startDay, setStartDay] = useState(0);
   const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const [key, setKey] = useState("");
 
   useEffect(() => {
     const year = currDate.getFullYear();
@@ -35,6 +36,31 @@ export default function Calendar() {
     setCurrDate(new Date(currDate.setMonth(currDate.getMonth() - 1)));
   };
 
+  useEffect(() => {
+    if (key === 37) {
+      setCurrDate(new Date(currDate.setMonth(currDate.getMonth() - 1)));
+      setKey("");
+    } else if (key === 39) {
+      setCurrDate(new Date(currDate.setMonth(currDate.getMonth() + 1)));
+      setKey("");
+    }
+  }, [key]);
+
+  useEffect(() => {
+    const handleKeyClick = (event) => {
+      setKey(event.keyCode);
+    };
+    document.addEventListener("keydown", handleKeyClick);
+    return function cleanup() {
+      document.removeEventListener("keydown", handleKeyClick);
+    };
+  }, []);
+
+  // const handleKeyClick = (e) => {
+  //   setKey(e.keyCode);
+  //   console.log(key);
+  // };
+
   return (
     <Box sx={{ width: 420 }} className="m-auto">
       <CalendarHead
@@ -43,6 +69,7 @@ export default function Calendar() {
         handleNextBtn={handleNextBtn}
       />
       <CalendarBody week={week} startDay={startDay} daysInMonth={daysInMonth} />
+      <div>{key}</div>
     </Box>
   );
 }
