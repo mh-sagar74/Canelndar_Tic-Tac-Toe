@@ -56,11 +56,6 @@ export default function Calendar() {
     };
   }, []);
 
-  // const handleKeyClick = (e) => {
-  //   setKey(e.keyCode);
-  //   console.log(key);
-  // };
-
   return (
     <Box sx={{ width: 420 }} className="m-auto">
       <CalendarHead
@@ -69,7 +64,6 @@ export default function Calendar() {
         handleNextBtn={handleNextBtn}
       />
       <CalendarBody week={week} startDay={startDay} daysInMonth={daysInMonth} />
-      <div>{key}</div>
     </Box>
   );
 }
