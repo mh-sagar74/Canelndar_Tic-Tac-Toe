@@ -1,16 +1,10 @@
-// "use client";
-
 import Card from "@mui/material/Card";
 import Btn from "../Btn";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
-// import Input from "../Input";
-// import { useState } from "react";
 import EditToDoList from "./EditToDoList";
 
 export default function ToDoList({ allTodos, setAllTodos }) {
-  // const [editedItem, setEditedItem] = useState(allTodos.task);
-
   const handleDltBtn = (key) => {
     const deletedItem = allTodos.filter((list) => key !== list.key);
     setAllTodos(deletedItem);
@@ -49,15 +43,6 @@ export default function ToDoList({ allTodos, setAllTodos }) {
               icon={<EditNoteRoundedIcon />}
             />
           </span>
-          {/* {list.isEdit ? (
-            <span className="flex">
-              <Input
-                value={editedItem}
-                onChange={(e) => setEditedItem(e.target.value)}
-              />
-              <Btn />
-            </span>
-          ) : null} */}
           <EditToDoList
             list={list}
             allTodos={allTodos}

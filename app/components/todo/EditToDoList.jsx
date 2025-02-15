@@ -4,7 +4,7 @@ import Btn from "../Btn";
 import Input from "../Input";
 import { useState } from "react";
 
-export default function EditToDoList({ list, allTodos, setAllTodos }) {
+export default function EditToDoList({ list, setAllTodos }) {
   const [editedItem, setEditedItem] = useState(list.task);
 
   const handleEditDoneBtn = (key) => {
