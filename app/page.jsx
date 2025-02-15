@@ -15,6 +15,9 @@ export default function Home() {
           <li>
             <Link href={"/tik-tak-toe"}>Tic-Tac-Toe Game</Link>
           </li>
+          <li>
+            <Link href={"/todo"}>To-Do App</Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${roboto.className} m-6`}>
         <nav>
-          <ul className="flex justify-evenly">
+          <ul className="flex justify-center gap-20">
             <li>
               <Link href={"/"}>Home</Link>
             </li>
@@ -24,6 +24,9 @@ export default function RootLayout({ children }) {
             </li>
             <li>
               <Link href={"/tik-tak-toe"}>Tick-Tack-Toe</Link>
+            </li>
+            <li>
+              <Link href={"/todo"}>To-Do</Link>
             </li>
           </ul>
         </nav>
