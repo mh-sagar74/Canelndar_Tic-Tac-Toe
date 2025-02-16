@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Footer from "./components/Footer";
+import { Suspense } from "react";
 
 const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
           </ul>
         </nav>
         <hr className="mt-3 mb-3" />
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
         <Footer />
       </body>
     </html>

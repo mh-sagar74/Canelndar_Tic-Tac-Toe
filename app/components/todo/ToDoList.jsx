@@ -3,6 +3,7 @@ import Btn from "../Btn";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
 import EditToDoList from "./EditToDoList";
+import { Box } from "@mui/material";
 
 export default function ToDoList({ allTodos, setAllTodos }) {
   const handleDltBtn = (key) => {
@@ -18,7 +19,7 @@ export default function ToDoList({ allTodos, setAllTodos }) {
   };
 
   return (
-    <div>
+    <Box>
       {allTodos.map((list) => (
         <Card
           className="mt-5 m-auto"
@@ -50,6 +51,6 @@ export default function ToDoList({ allTodos, setAllTodos }) {
           />
         </Card>
       ))}
-    </div>
+    </Box>
   );
 }

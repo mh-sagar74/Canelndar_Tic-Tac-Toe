@@ -1,5 +1,6 @@
 "use client";
 
+import { Box } from "@mui/material";
 import Btn from "../Btn";
 import Input from "../Input";
 import { useState } from "react";
@@ -18,7 +19,7 @@ export default function EditToDoList({ list, setAllTodos }) {
   };
 
   return (
-    <div>
+    <Box>
       {list.isEdit ? (
         <span className="flex">
           <Input
@@ -29,6 +30,6 @@ export default function EditToDoList({ list, setAllTodos }) {
           <Btn clickEvent={() => handleEditDoneBtn(list.key)} />
         </span>
       ) : null}
-    </div>
+    </Box>
   );
 }
